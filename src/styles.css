@@ -1,0 +1,495 @@
+/* Reset default browser styling */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set up the base layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #edf2f7; /* Adjust as needed */
+}
+
+  .App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make the App fill the full height of the viewport */
+  }
+
+  /* Content Wrapper */
+.content-wrapper {
+  display: flex;
+  flex: 1; /* Allow this section to fill remaining space */
+  margin: 0; /* Remove any default margin */
+}
+
+/* Main Content Styles */
+.main-content {
+  flex: 1; /* Make main content take available space */
+  padding: 20px; /* Optional padding for the main content */
+  background-color: #2d3748; /* Background color for contrast */
+  margin: 0; /* Ensure there's no margin on the main content */
+  box-sizing: border-box; /* Include padding and border in width and height calculations */
+}
+
+/* If you want to remove any default padding/margin from body */
+body {
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  background-color: #2d3748; /* Adjust as needed */
+}
+
+  
+  /* General Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Keyframe Animations */
+  @keyframes gradientShift {
+    0% { background-position: 0%; }
+    50% { background-position: 100%; }
+    100% { background-position: 0%; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Header Styles */
+.header {
+    position: fixed; /* Keep it fixed at the top */
+    top: 0; /* Position it at the top */
+    left: 0;
+    right: 0;
+    height: 70px; /* Fixed height for header */
+    background-color: #2d3748; /* Header background color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between title and nav items */
+    padding: 0 20px; /* Add padding to left and right */
+    z-index: 1000; /* Ensure it sits above other content */
+  }
+  
+  
+  .header h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    background: linear-gradient(90deg, #60a5fa, #fca5a5, #a78bfa);
+    background-size: 200%;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: gradientShift 4s ease infinite;
+  }
+  
+  /* Navigation Styles */
+  .header nav {
+    display: flex; /* Use flex for alignment */
+  }
+  
+  .header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between navigation items */
+  }
+  
+  .header nav ul li a {
+    color: #f3f4f6;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 8px;
+    position: relative;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .header nav ul li a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #60a5fa, #fca5a5, #a78bfa);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: -1; /* Ensures the gradient stays behind text */
+  }
+  
+  .header nav ul li a:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .header nav ul li a:hover,
+  .header nav ul li a:focus {
+    color: #111827;
+    font-weight: 600;
+  }
+  
+  
+  
+  /* Main content padding for layout */
+  main {
+    padding-top: 80px; /* Account for fixed header */
+  }
+  
+  
+  
+  /* Animation Styles for About Me Section */
+.line {
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    margin: 15px 0; /* Spacing between lines */
+}
+
+.fade-in {
+    opacity: 1; /* Fade in */
+    transform: translateY(0); /* Move to original position */
+}
+
+/* About Me Section Styles */
+.about-me {
+    padding: 80px 20px;
+    background-color: #1f2937; /* Dark background for contrast */
+    color: #f3f4f6;
+    text-align: center;
+    width: 100%;
+}
+  
+.about-me h2 {
+    font-size: 2.5em;
+    color: #60a5fa; /* Accent color */
+    margin-bottom: 20px;
+    position: relative;
+}
+  
+.about-me h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #a78bfa; /* Secondary accent color */
+    margin: 10px auto 0;
+}
+  
+.about-me p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #d1d5db;
+    max-width: 700px;
+    margin: 20px auto;
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-me {
+        padding: 60px 15px;
+    }
+  
+    .about-me h2 {
+        font-size: 2em;
+    }
+  
+    .about-me p {
+        font-size: 1em;
+    }
+}
+
+  
+  /* Project Section Styles */
+.project-section {
+    padding: 80px 20px;
+    background-color: #2d3748; /* Darker background for contrast */
+    color: #f3f4f6;
+    text-align: center;
+    width: 100%;
+}
+
+.project-section h2 {
+    font-size: 2.5em;
+    color: #60a5fa; /* Accent color */
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.project-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between cards */
+  }
+
+.project-card {
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+    margin: 20px auto; /* Center the card */
+    padding: 20px;
+    border: 1px solid #cbd5e0; /* Add a light border for distinction */
+    background-color: #4a5568; /* Dark background for cards */
+    border-radius: 12px; /* Rounded corners for a softer look */
+    max-width: 600px; /* Set a max width for better appearance */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    position: relative; /* For absolute positioning of pseudo-elements */
+    overflow: hidden; /* Clip overflow for rounded corners */
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+  }
+  
+  .project-card h3 {
+    color: #f7fafc; /* Light color for text */
+    font-size: 1.5em; /* Slightly larger font size */
+    margin-bottom: 10px; /* Space below title */
+  }
+  
+  .project-card p {
+    color: #e2e8f0; /* Slightly lighter text color */
+    line-height: 1.6; /* Improved line height */
+  }
+  
+  .project-card a {
+    display: inline-block; /* Block display for easier styling */
+    margin-top: 15px; /* Space above link */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #60a5fa; /* Button color */
+    color: #1a202c; /* Button text color */
+    text-decoration: none; /* Remove underline */
+    border-radius: 5px; /* Rounded corners for the button */
+    transition: background-color 0.3s ease; /* Smooth transition for button */
+  }
+  
+  .project-card a:hover {
+    background-color: #4c51bf; /* Darker shade on hover */
+  }
+  
+.project-card.fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+.line {
+    opacity: 0; /* Start invisible */
+    transform: translateY(20px); /* Start slightly below */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth transition */
+  }
+  
+  .fade-in {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0); /* Move to original position */
+  }
+  
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-section {
+        padding: 60px 15px;
+    }
+
+    .project-section h2 {
+        font-size: 2em;
+    }
+
+    .project-card {
+        width: 90%; /* Make cards full width on smaller screens */
+    }
+}
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 80px 20px;
+    background-color: #1f2937; /* Dark background to match overall theme */
+    color: #e2e8f0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5em;
+    color: #63b3ed; /* Light blue accent color */
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #1a202c; /* Darker card background */
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Slight shadow for depth */
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #a0aec0; /* Light gray for label */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #4a5568; /* Dark gray border for input fields */
+    border-radius: 6px;
+    background-color: #2d3748; /* Input background color */
+    color: #e2e8f0;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #63b3ed; /* Blue border on focus */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #63b3ed; /* Accent color */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.submit-button:hover {
+    background-color: #4299e1; /* Slightly darker shade on hover */
+}
+
+.submit-button:active {
+    transform: scale(0.98); /* Slight press effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+    
+    .contact-section h2 {
+        font-size: 2em;
+    }
+}
+
+  
+
+  
+  /* Footer Styles */
+.footer {
+    position: fixed; /* Keep it fixed at the bottom */
+    margin-top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px; /* Fixed height for footer */
+    background-color: #2d3748; /* Footer background color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    z-index: 1000; /* Ensure it sits above other content */
+  }
+  
+
+
+
+    
+  /* Sidebar styles */
+.sidebar {
+  width: 250px;
+  padding: 20px; /* You can adjust this padding as needed */
+  background-color: #2d3748;
+  color: #f7fafc;
+  position: sticky;
+  top: 70px;
+  height: calc(100vh - 140px); /* Adjust height based on header/footer */
+  overflow-y: auto; /* Scroll only if needed */
+  margin-right: 20px; /* This controls the space between sidebar and main content */
+  box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+
+/* Sidebar title styles */
+.sidebar h3 {
+  font-size: 1.4em;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #4a5568;
+  padding-bottom: 5px;
+}
+
+/* Education section */
+.sidebar .education {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #3b4a63;
+  border-radius: 8px;
+}
+
+.sidebar .education li {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+  padding: 8px;
+  background-color: #4a5568;
+  border-radius: 6px;
+}
+
+/* Skills section */
+.sidebar .skills {
+  padding: 10px;
+  background-color: #334155;
+  border-radius: 8px;
+}
+
+.sidebar .skills li {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+  padding: 8px;
+  background-color: #475569;
+  border-radius: 6px;
+}
+
+/* List item spacing */
+.sidebar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.sidebar ul li {
+  color: #e2e8f0;
+}
+
+
+  
